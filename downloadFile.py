@@ -12,7 +12,7 @@ def downloadFile(url, path):
 
 def main():
     url = "https://www.loteria.cl/loterianet/Content/sincronizacion/Kino.xls"
-    path = "C:\\Users\\Public\\Documents\\pythonFiles\\Kino.xls"
+    path = "C:\\Users\\camil\\OneDrive\\Documentos\\pythonFiles\\Kino.xls"
     if downloadFile(url, path):
         print("Downloaded file: " + path)
 
