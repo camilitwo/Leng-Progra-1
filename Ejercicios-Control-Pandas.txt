@@ -1,0 +1,59 @@
+1.- Cargar archivo de calidad del vino, revise informaciÃ³n
+
+2.- Obtenga estadÃ­sticas generales de la tabla cargada
+
+3.- Cree una clase que tenga como atributo la tabla de calidad de vino, 
+    debe tener los siguientes mÃ©todos:
+		obtenerMÃ­nimo min()
+		obtenerMÃ¡ximo max()
+		obtenerMedia mean()
+		obtenerDesvEstandar  std()
+		obtenerModa mode()
+
+    cada mÃ©todo debe recibir como parÃ¡metro el nombre de la columna
+
+4.- Identifique las distintas calidades de vino que estÃ¡n presentes
+		unique()
+    Identifique los distintos valores de ph que estÃ¡n presentes
+		unique()
+
+5.- CuÃ¡ntos vinos por calidad se identifican
+	vinos.groupby("calidad")["calidad"].count()
+
+6.- CuÃ¡ntos vinos por calidad y ph se identifican
+	vinos.groupby(["calidad", "ph"]).count()
+      vinos.groupby(["calidad", "ph"]).ph.count()
+
+6.- grafique ph v/s calidad, puntos scatter y barra bar, se puede deducir algo
+
+    vinos.plot(x="ph", y="calidad", kind="scatter")
+
+7.- grafique Acidez v/s calidad, puntos scatter y barra bar, se puede deducir algo
+
+8.- Liste los valores distintos de ph sÃ³lo para los vinos de mÃ¡xima calidad
+
+9.- Liste los valores distintos de ph sÃ³lo para los vinos de menor calidad
+
+10.-Cargue el archivo ips.xlsx
+
+11.- Analice datos, obtenga estadÃ­sticas generales
+
+12.- Construya la clase IPS que tenga como atributo el dataframe reciÃ©n cargado
+
+13.- Incluya el mÃ©todo rangoPrueba, que recibe como parÃ¡metro una de las 3 pruebas
+(leng, mat o cs) y devuelve el nombre de las comunas cuyo puntaje estÃ¡ en ese rango.
+Realice su mÃ©todo con un ciclo
+
+14.- Grafique sector v/s alguna de las pruebas simce que se rinden, puede deducir algo
+
+15,. Liste el promedio por sector para todas las pruebas simce
+
+ips.groupby("SECTOR")["SimceLectura20198v"].mean().sort_values(ascending=False)
+
+16.- Liste las comna que en todas las pruebas simce obtuvieron mÃ¡s de 250 ptos
+
+ips[(ips["SimceLectura20198v"]>230) & (ips["SimceMatem20198v"]>200)] ...
+
+17.- Grafique Ã­ndice de	prioridad social v/s alguna de las pruebas de simce
+
+ips.plot(x="IndPrioSocial", y = "SimceLectura20198v", kind = "scatter") 
